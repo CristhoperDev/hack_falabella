@@ -51,5 +51,20 @@
       <ion-label>{{list.Codigo_Barras}}</ion-label>
     </ion-item>
   </ion-list>
+    <ion-button color="dark" (click)="getRecomendation(list.Tipo)">Recomendadas </ion-button>
+  </div>
+  <div *ngFor="let list of recomendation.lineas">
+    <ion-img src="{{list.URL_Imagen}}"></ion-img>
+    <ion-list>
+      <ion-item>
+        <ion-label>{{list.Producto}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{list.Tipo}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{list.Codigo_Barras}}</ion-label>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>

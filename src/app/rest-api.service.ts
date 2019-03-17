@@ -8,8 +8,8 @@ const httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 // const apiUrl = "http://localhost:1337/localhost:3000/api/classroom";
-const apiUrl = 'https://002656fc.ngrok.io/rest/index.php/mostrar/mostrarDatos';
-
+const apiUrl = 'http://eb6095ba.ngrok.io/rest/index.php/mostrar/mostrarDatos/';
+const apiUrl2 = 'http://eb6095ba.ngrok.io/rest/index.php/recomend/recomendDatos';
 @Injectable({
     providedIn: 'root'
 })
@@ -77,6 +77,15 @@ export class RestApiService {
 
     detailProduct(id: string): Observable<any> {
         const url = `${apiUrl}/${id}`;
+        return this.http.get(url)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
+    recomendationProduct(id: string): Observable<any> {
+        const url = `${apiUrl2}/${id}`;
+        alert(url);
         return this.http.get(url)
             .pipe(
                 catchError(this.handleError)

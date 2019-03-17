@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RestApiService} from '../rest-api.service';
 import {LoadingController} from '@ionic/angular';
 import {ActivatedRoute, Router} from '@angular/router';
+import {forEach} from '@angular-devkit/schematics';
 
 @Component({
   selector: 'app-detail-scanner',
@@ -10,7 +11,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class DetailScannerPage implements OnInit {
     classroom: any = {};
-    detail: any = {};
+    classroom2: any = {};
+    recomendation: any = {};
 
     constructor(public api: RestApiService,
                 public loadingController: LoadingController,
@@ -31,6 +33,18 @@ export class DetailScannerPage implements OnInit {
             }, err => {
                 console.log(err);
             });
+    }
+    async getRecomendation(type_product) {
+        await this.api.recomendationProduct(type_product)
+            .subscribe(res => {
+                console.log(res);
+                this.recomendation = res;
+            }, err => {
+                console.log(err);
+            });
+    }
+    comparison(id) {
+        this.router.navigate(['/comparison', String(id)]);
     }
 
 }

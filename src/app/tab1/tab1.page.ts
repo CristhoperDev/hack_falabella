@@ -20,7 +20,8 @@ export class Tab1Page {
             console.log('Error', err);
         });
     }
-    scan2(barcodeData) {
-       this.router.navigate(['/detail-scanner', JSON.stringify(barcodeData)]);
+    scan2() {
+        /*this.router.navigate(['/detail-scanner', JSON.stringify(num)]);*/
+            this.router.navigate(['/detail-scanner', String(7750182003834)]);
     }
 }
