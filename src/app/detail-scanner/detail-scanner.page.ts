@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {RestApiService} from '../rest-api.service';
+import {LoadingController} from '@ionic/angular';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-detail-scanner',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail-scanner.page.scss'],
 })
 export class DetailScannerPage implements OnInit {
+    classroom: any = {};
+    constructor(public api: RestApiService,
+                public loadingController: LoadingController,
+                public route: ActivatedRoute,
+                public router: Router) { }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.classroom = this.route.snapshot.paramMap.get('id');
+       console.log(this.route.snapshot.paramMap.get('id'));
+    }
 
 }
