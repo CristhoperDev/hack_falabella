@@ -1,5 +1,7 @@
 {
   "name": "hack_indecopi",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
