@@ -9,14 +9,18 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-    constructor(private barcodeScanner: BarcodeScanner, public router: Router) { }
-    scan( num) {
-        this.router.navigate(['/detail-scanner', JSON.stringify(num)]);
-        /*this.barcodeScanner.scan().then(barcodeData => {
-            this.router.navigate(['/detail-scanner', JSON.stringify(barcodeData)]);
+    constructor(private barcodeScanner: BarcodeScanner, public router: Router) {
+    }
+    scan() {
+        /*this.router.navigate(['/detail-scanner', JSON.stringify(num)]);*/
+        this.barcodeScanner.scan().then(barcodeData => {
+            this.router.navigate(['/detail-scanner', String(barcodeData.text)]);
             console.log('Barcode data', barcodeData);
         }).catch(err => {
             console.log('Error', err);
-        });*/
+        });
+    }
+    scan2(barcodeData) {
+       this.router.navigate(['/detail-scanner', JSON.stringify(barcodeData)]);
     }
 }

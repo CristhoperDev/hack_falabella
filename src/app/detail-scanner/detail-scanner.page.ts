@@ -10,14 +10,27 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class DetailScannerPage implements OnInit {
     classroom: any = {};
+    detail: any = {};
+
     constructor(public api: RestApiService,
                 public loadingController: LoadingController,
                 public route: ActivatedRoute,
-                public router: Router) { }
+                public router: Router) {
+    }
+
 
     ngOnInit() {
-        this.classroom = this.route.snapshot.paramMap.get('id');
-       console.log(this.route.snapshot.paramMap.get('id'));
+        this.getClassroom();
+    }
+
+    async getClassroom() {
+        await this.api.detailProduct(this.route.snapshot.paramMap.get('id'))
+            .subscribe(res => {
+                console.log(res);
+                this.classroom = res;
+            }, err => {
+                console.log(err);
+            });
     }
 
 }

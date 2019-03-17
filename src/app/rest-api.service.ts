@@ -2,18 +2,20 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
+import {any} from 'codelyzer/util/function';
 
 const httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 // const apiUrl = "http://localhost:1337/localhost:3000/api/classroom";
-const apiUrl = 'http://192.168.0.7:3000/api/classroom';
+const apiUrl = 'https://002656fc.ngrok.io/rest/index.php/mostrar/mostrarDatos';
 
 @Injectable({
     providedIn: 'root'
 })
 export class RestApiService {
-
+    valueqr: any ;
+    value: any;
     constructor(private http: HttpClient) { }
 
     private handleError(error: HttpErrorResponse) {
@@ -68,6 +70,14 @@ export class RestApiService {
     deleteClassroom(id: string): Observable<{}> {
         const url = `${apiUrl}/${id}`;
         return this.http.delete(url, httpOptions)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
+    detailProduct(id: string): Observable<any> {
+        const url = `${apiUrl}/${id}`;
+        return this.http.get(url)
             .pipe(
                 catchError(this.handleError)
             );
