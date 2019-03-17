@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RestApiService} from '../rest-api.service';
 import {LoadingController} from '@ionic/angular';
 import {ActivatedRoute, Router} from '@angular/router';
-
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
@@ -13,6 +13,7 @@ export class Tab3Page implements OnInit {
     recomendation: any = {};
 
     constructor(public api: RestApiService,
+                private youtube: YoutubeVideoPlayer,
                 public loadingController: LoadingController,
                 public route: ActivatedRoute,
                 public router: Router) {
@@ -31,5 +32,8 @@ export class Tab3Page implements OnInit {
             }, err => {
                 console.log(err);
             });
+    }
+    video_youtube() {
+        this.youtube.openVideo('https://www.youtube.com/watch?v=AHtKYCv-DYI');
     }
 }

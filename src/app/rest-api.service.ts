@@ -86,7 +86,6 @@ export class RestApiService {
 
     recomendationProduct(id: string): Observable<any> {
         const url = `${apiUrl2}/${id}`;
-        alert(url);
         return this.http.get(url)
             .pipe(
                 catchError(this.handleError)
@@ -94,7 +93,7 @@ export class RestApiService {
     }
     rankingProduct(): Observable<any> {
         const url = `${apiUrl3}`;
-        alert(url);
+       // alert(url);
         return this.http.get(url)
             .pipe(
                 catchError(this.handleError)

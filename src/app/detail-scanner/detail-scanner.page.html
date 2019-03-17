@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start" defaultHref="/tabs/films">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -10,6 +10,7 @@
 <ion-content padding>
   <div *ngFor="let list of classroom.lineas">
   <ion-img src="{{list.URL_Imagen}}"></ion-img>
+    <ion-img src="/assets/img/image_detail.png"></ion-img>
   <ion-list>
     <ion-item>
       <ion-label>{{list.Producto}}</ion-label>
