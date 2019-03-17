@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-buttons slot="start" defaultHref="/tabs/films">
+    <ion-buttons slot="start" defaultHref="/tabs/tabs1">
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Detalle del Producto</ion-title>
@@ -13,58 +13,58 @@
     <ion-img src="/assets/img/image_detail.png"></ion-img>
   <ion-list>
     <ion-item>
-      <ion-label>{{list.Producto}}</ion-label>
+      <ion-label>Nombre: {{list.Producto}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>{{list.Envase}}</ion-label>
+      <ion-label>Envase: {{list.Envase}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>{{list.Caloria}}</ion-label>
+      <ion-label>Calorias: {{list.Caloria}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>{{list.Ingredientes_Peligrosos}}</ion-label>
+      <ion-label> Ingredientes Peligrosos: {{list.Ingredientes_Peligrosos}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>{{list.Azucar}}</ion-label>
+      <ion-label>Azucar: {{list.Azucar}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>{{list.Carbohidratos}}</ion-label>
+      <ion-label>Carbohidratos: {{list.Carbohidratos}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>{{list.Proteina}}</ion-label>
+      <ion-label>Proteina: {{list.Proteina}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>{{list.Sodio}}</ion-label>
+      <ion-label>Sodio : {{list.Sodio}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>{{list.Grasa_saturada}}</ion-label>
+      <ion-label>Grasa saturada:{{list.Grasa_saturada}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>{{list.Grasas}}</ion-label>
+      <ion-label>Grasas: {{list.Grasas}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>{{list.Grasa_trans}}</ion-label>
+      <ion-label>Grasas Trans: {{list.Grasa_trans}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>{{list.Tipo}}</ion-label>
+      <ion-label>Tipo de Producto: {{list.Tipo}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>{{list.Codigo_Barras}}</ion-label>
+      <ion-label>Codigo de Barra: {{list.Codigo_Barras}}</ion-label>
     </ion-item>
   </ion-list>
-    <ion-button color="dark" (click)="getRecomendation(list.Tipo)">Recomendadas </ion-button>
+    <ion-button color="dark" (click)="getRecomendation(list.Tipo)">Productos Recomendadas </ion-button>
   </div>
   <div *ngFor="let list of recomendation.lineas">
     <ion-img src="{{list.URL_Imagen}}"></ion-img>
     <ion-list>
       <ion-item>
-        <ion-label>{{list.Producto}}</ion-label>
+        <ion-label>Nombre: {{list.Producto}}</ion-label>
       </ion-item>
       <ion-item>
-        <ion-label>{{list.Tipo}}</ion-label>
+        <ion-label>Tipo de Producto: {{list.Tipo}}</ion-label>
       </ion-item>
       <ion-item>
-        <ion-label>{{list.Codigo_Barras}}</ion-label>
+        <ion-label>Cod Barras: {{list.Codigo_Barras}}</ion-label>
       </ion-item>
     </ion-list>
   </div>

@@ -8,9 +8,9 @@ const httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 // const apiUrl = "http://localhost:1337/localhost:3000/api/classroom";
-const apiUrl = 'http://eb6095ba.ngrok.io/rest/index.php/mostrar/mostrarDatos/';
-const apiUrl2 = 'http://eb6095ba.ngrok.io/rest/index.php/recomend/recomendDatos';
-const apiUrl3 = 'http://eb6095ba.ngrok.io/rest/index.php/ranking/rankingDatos';
+const apiUrl = 'http://c13c1378.ngrok.io/rest/index.php/mostrar/mostrarDatos/';
+const apiUrl2 = 'http://c13c1378.ngrok.io/rest/index.php/recomend/recomendDatos';
+const apiUrl3 = 'http://c13c1378.ngrok.io/rest/index.php/ranking/rankingDatos';
 @Injectable({
     providedIn: 'root'
 })

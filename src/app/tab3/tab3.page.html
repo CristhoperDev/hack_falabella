@@ -7,7 +7,23 @@
 </ion-header>
 
 <ion-content>
-  <div *ngFor="let list of classroom.lineas">
+  <ion-card *ngFor="let list of classroom.lineas">
+    <img style="height: 30%; width: 30%; display: block; margin: 0 auto;" src="{{ list.URL_Imagen }}" align="center">
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Producto: {{list.Producto}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Tipo: {{list.Tipo}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Codigo de Barras: {{list.Codigo_Barras}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <!--<div *ngFor="let list of classroom.lineas">
     <ion-img src="{{list.URL_Imagen}}"></ion-img>
     <ion-list>
       <ion-item>
@@ -20,6 +36,5 @@
         <ion-label>{{list.Codigo_Barras}}</ion-label>
       </ion-item>
     </ion-list>
-  </div>
-  <ion-button color="dark" (click)="video_youtube()">Ver Video </ion-button>
+  </div>-->
 </ion-content>

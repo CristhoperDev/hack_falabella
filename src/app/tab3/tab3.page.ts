@@ -34,6 +34,6 @@ export class Tab3Page implements OnInit {
             });
     }
     video_youtube() {
-        this.youtube.openVideo('https://www.youtube.com/watch?v=AHtKYCv-DYI');
+        this.youtube.openVideo('https://www.youtube.com/embed/AHtKYCv-DYI');
     }
 }
