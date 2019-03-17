@@ -10,6 +10,7 @@ const httpOptions = {
 // const apiUrl = "http://localhost:1337/localhost:3000/api/classroom";
 const apiUrl = 'http://eb6095ba.ngrok.io/rest/index.php/mostrar/mostrarDatos/';
 const apiUrl2 = 'http://eb6095ba.ngrok.io/rest/index.php/recomend/recomendDatos';
+const apiUrl3 = 'http://eb6095ba.ngrok.io/rest/index.php/ranking/rankingDatos';
 @Injectable({
     providedIn: 'root'
 })
@@ -85,6 +86,14 @@ export class RestApiService {
 
     recomendationProduct(id: string): Observable<any> {
         const url = `${apiUrl2}/${id}`;
+        alert(url);
+        return this.http.get(url)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+    rankingProduct(): Observable<any> {
+        const url = `${apiUrl3}`;
         alert(url);
         return this.http.get(url)
             .pipe(

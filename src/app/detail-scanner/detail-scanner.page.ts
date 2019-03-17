@@ -11,7 +11,6 @@ import {forEach} from '@angular-devkit/schematics';
 })
 export class DetailScannerPage implements OnInit {
     classroom: any = {};
-    classroom2: any = {};
     recomendation: any = {};
 
     constructor(public api: RestApiService,
