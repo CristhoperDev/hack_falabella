@@ -25,15 +25,12 @@ export class Tab3Page implements OnInit {
     }
 
     async getClassroom() {
-        await this.api.rankingProduct()
+        await this.api.listaCompras()
             .subscribe(res => {
                 console.log(res);
                 this.classroom = res;
             }, err => {
                 console.log(err);
             });
-    }
-    video_youtube() {
-        this.youtube.openVideo('https://www.youtube.com/embed/AHtKYCv-DYI');
     }
 }

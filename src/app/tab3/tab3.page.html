@@ -1,40 +1,29 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      Ranking
+      Mis Compras
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let list of classroom.lineas">
-    <img style="height: 30%; width: 30%; display: block; margin: 0 auto;" src="{{ list.URL_Imagen }}" align="center">
+  <ion-card *ngFor="let list of classroom">
+    <img style="height: 30%; width: 30%; display: block; margin: 0 auto;" src="{{ list.imagen }}" align="center">
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-label>Producto: {{list.Producto}}</ion-label>
+        <ion-label>Codigo de Barras: {{list.codBarras}}</ion-label>
+      </ion-item>
+        <ion-item>
+          <ion-label>Descripcion: {{list.descripcion}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Tipo: {{list.Tipo}}</ion-label>
+          <ion-label>Precio: {{list.precio}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Codigo de Barras: {{list.Codigo_Barras}}</ion-label>
+          <ion-label>Stock: {{list.stock}}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
-  <!--<div *ngFor="let list of classroom.lineas">
-    <ion-img src="{{list.URL_Imagen}}"></ion-img>
-    <ion-list>
-      <ion-item>
-        <ion-label>{{list.Producto}}</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>{{list.Tipo}}</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>{{list.Codigo_Barras}}</ion-label>
-      </ion-item>
-    </ion-list>
-  </div>-->
 </ion-content>

@@ -1,8 +1,37 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {RestApiService} from '../rest-api.service';
+import {YoutubeVideoPlayer} from '@ionic-native/youtube-video-player/ngx';
+import {LoadingController} from '@ionic/angular';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-tabs',
   templateUrl: 'tabs.page.html',
   styleUrls: ['tabs.page.scss']
 })
-export class TabsPage {}
+export class TabsPage implements OnInit {
+  classroom: any = {};
+  recomendation: any = {};
+
+  constructor(public api: RestApiService,
+              private youtube: YoutubeVideoPlayer,
+              public loadingController: LoadingController,
+              public route: ActivatedRoute,
+              public router: Router) {
+  }
+  ngOnInit() {
+    setInterval(() => {
+      this.getClassroom();
+    }, 1000);
+  }
+
+  async getClassroom() {
+    await this.api.listaCompras()
+        .subscribe(res => {
+          console.log(res);
+          this.classroom = res;
+        }, err => {
+          console.log(err);
+        });
+  }
+}

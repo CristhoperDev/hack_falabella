@@ -8,9 +8,9 @@ const httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 // const apiUrl = "http://localhost:1337/localhost:3000/api/classroom";
-const apiUrl = 'http://c13c1378.ngrok.io/rest/index.php/mostrar/mostrarDatos/';
+const apiUrl = 'http://www.vrammdev.com/falabella_rest/Controller/ApiController.php?op=3';
 const apiUrl2 = 'http://c13c1378.ngrok.io/rest/index.php/recomend/recomendDatos';
-const apiUrl3 = 'http://c13c1378.ngrok.io/rest/index.php/ranking/rankingDatos';
+
 @Injectable({
     providedIn: 'root'
 })
@@ -76,24 +76,10 @@ export class RestApiService {
             );
     }
 
-    detailProduct(id: string): Observable<any> {
-        const url = `${apiUrl}/${id}`;
-        return this.http.get(url)
-            .pipe(
-                catchError(this.handleError)
-            );
-    }
 
-    recomendationProduct(id: string): Observable<any> {
-        const url = `${apiUrl2}/${id}`;
-        return this.http.get(url)
-            .pipe(
-                catchError(this.handleError)
-            );
-    }
-    rankingProduct(): Observable<any> {
-        const url = `${apiUrl3}`;
-       // alert(url);
+    listaCompras(): Observable<any> {
+        const url = `${apiUrl}`;
+        // alert(url);
         return this.http.get(url)
             .pipe(
                 catchError(this.handleError)

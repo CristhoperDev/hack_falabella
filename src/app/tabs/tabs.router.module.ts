@@ -8,15 +8,6 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab2',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
-          }
-        ]
-      },
-      {
         path: 'tab1',
         children: [
           {
