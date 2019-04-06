@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let list of classroom">
+  <ion-card *ngFor="let list of classroom; let i = index">
     <img style="height: 30%; width: 30%; display: block; margin: 0 auto;" src="{{ list.imagen }}" align="center">
     <ion-card-content>
       <ion-list>
@@ -18,7 +18,7 @@
           <ion-label>Descripcion: {{list.descripcion}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Precio: {{ indice ==  list.precio }}</ion-label>
+          <ion-label>Precio: {{ list.precio }}</ion-label>
         </ion-item>
         <ion-item>
           <ion-label>Stock: {{list.stock}}</ion-label>
@@ -27,10 +27,10 @@
           <ion-label>PRECIO: {{list.precio }}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>PRECIO: {{indice }}</ion-label>
+          <ion-label>PRECIO: {{ getSum() }}</ion-label>
         </ion-item>
-
       </ion-list>
     </ion-card-content>
   </ion-card>
+  <ion-button center color="success" (click)="comprar()">REALIZAR PAGO </ion-button>
 </ion-content>

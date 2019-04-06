@@ -26,7 +26,10 @@ export class TabsPage implements OnInit {
   }
 
   async getClassroom() {
-    await this.api.listaCompras()
+      let data = {
+          status: 1
+      };
+    await this.api.listaCompras(data)
         .subscribe(res => {
           console.log(res);
           this.classroom = res;

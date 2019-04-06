@@ -22,7 +22,7 @@ export class AppComponent {
           // Okay, so the platform is ready and our plugins are available.
           // Here you can do any higher level native things you might need.
           if (this.platform.is('android')) {
-              this.statusBar.backgroundColorByHexString('#2B7E89');
+              this.statusBar.backgroundColorByHexString('#f04141');
           }
       });
   }
